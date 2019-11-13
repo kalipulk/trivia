@@ -1,8 +1,4 @@
 
-.phrase{
-    font-size:50px;
-    font-weight:bolder;
-}
 .bgstyle{
     background-image: url("palm-leaf/palm-leaf.png");
     font-family: 'Montserrat', sans-serif;
@@ -25,7 +21,7 @@
     text-align: center;
     color: #3D5B59;
     font-size:28px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .scoreboard-flex{
@@ -76,14 +72,13 @@
 }
  */
 
-.padder2{
+.padder{
     padding:50px 0px;
-    background-color: #E8E5D8;
+    background-color: RGBA(232,229,216,0.5);
     width: 80%;
-    vertical-align: center;
+    margin: auto;
     border-radius:10px;
     border: #3D5B59 solid 5px;
-
 }
 
 

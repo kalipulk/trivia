@@ -10,7 +10,6 @@
     <script type="text/javascript" src="trivia.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo|Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style_trivia.css">
-
 </head>
 
 <body class="bgstyle">
@@ -20,110 +19,87 @@
         <div class="directions">answer each question before time runs out!</div>
     </div>
 
+    <!--Score-->
+    <div class="scoreboard-flex">
+        <div class="win-text">
+            <div>CORRECT</div>
+            <div id="correct">0</div>
+        </div>
+        <div class="loss-text">
+            <div>INCORRECT</div>
+            <div id="incorrect">0</div>
+        </div>
+        <div class="missed-text">
+            <div>MISSED</div>
+            <div id="correct">0</div>
+        </div>
+    </div>
     <!--Score Board-->
     <div>
         <!--Timer-->
-        <div class="scoreboard-flex">
+        <div class="timer">
             <div>
                 <div>TIME:</div>
                 <div id="timer"></div>
             </div>
         </div>
-
-        <!--Score-->
-        <div class="scoreboard-flex">
-            <div class="win-text">
-                <div>CORRECT</div>
-                <div id="correct">0</div>
-            </div>
-            <div class="loss-text">
-                <div>INCORRECT</div>
-                <div id="incorrect">0</div>
-            </div>
-            <div class="missed-text">
-                <div>MISSED</div>
-                <div id="correct">0</div>
-            </div>
-        </div>
-
     </div>
 
     <!--Questions-->
-    <div>
+    <div class="padder">
         <!--Question 1-->
-        <div class="multiple-choice-question" id="multipleChoiceQuestion1">
+        <div class="question" id="question1">
             <!--Title-->
             <div class="question-title">Question 1:</div>
             <!--Question-->
             <div id="question1" class="question">This is a multiple choice question?</div>
             <!--Answers-->
-            <div class="mc-answers-flex">
+            <div class="answers-flex">
                 <div>
-                    <div id="mcAnswer1" class="mc-answer-btn" onclick="mcAnswerCheckBtn1()">Answer 1</div>
+                    <div id="answer1" class="answer-btn" onclick="answerCheckBtn1()">Answer 1</div>
                 </div>
                 <div>
-                    <div id="mcAnswer2" class="mc-answer-btn" onclick="mcAnswerCheckBtn2()">Answer 2</div>
+                    <div id="answer2" class="answer-btn" onclick="answerCheckBtn2()">Answer 2</div>
                 </div>
             </div>
-            <div class="mc-answers-flex">
+            <div class="answers-flex">
                 <div>
-                    <div id="mcAnswer3" class="mc-answer-btn" onclick="mcAnswerCheckBtn3()">Answer 3</div>
+                    <div id="answer3" class="answer-btn" onclick="answerCheckBtn3()">Answer 3</div>
                 </div>
                 <div>
-                    <div id="mcAnswer4" class="mc-answer-btn" onclick="mcAnswerCheckBtn4()">Answer 4</div>
+                    <div id="answer4" class="answer-btn" onclick="answerCheckBtn4()">Answer 4</div>
                 </div>
             </div>
         </div>
 
-        <!--Question 2-->
-        <div class="true-false-question" id="trueFalseQuestion1" style="display:none;">
-            <!--Title-->
-            <div class="question-title">Question 2:</div>
-            <!--Question-->
-            <div id="question2" class="question">This is a True or False Question?</div>
-            <!--Answers-->
-            <div class="tf-answers-flex">
-                <div>
-                    <div id="trueQ1" onclick="tfQuestion1True()" class="tf-answer-btn">True</div>
-                </div>
-                <div>
-                    <div id="falseQ1" onclick="tfQuestion1False()" class="tf-answer-btn">False</div>
-                </div>
-            </div>
-        </div>
-        <!--Question 3-->
-        <div class="find-that-phrase-question" id="findThatPhraseQuestion1" style="display:none;">
-            <!--Title-->
-            <div class="question-title">Question 3:</div>
-            <!--Question-->
-            <div id="question3" class="question">This is a Single Word Question?</div>
-            <!--Answer-->
-            <div class="ftp-answers-flex">
-                <div>
-                    <form>
-                        <div class="specifications">(Please Answer in lowercase)</div>
-                        <input type="text" placeholder="Finish the Phrase" id="phraseQ1" class="ftp-input">
-                        <div class="ftp-submit-cont">
-                            <div id="submitQ1" onclick="ftpQ1Guess()" class="ftp-submit-btn">
-                                Submit
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!--Question 4-->
-        <div></div>
-        <!--Question 5-->
-        <div></div>
-        <!--Question 6-->
-        <div></div>
+    </div>
+    <!--Question 3-->
+    <div>
+        <!--Title-->
+        <div class="question-title">Question 3:</div>
+        <!--Question-->
+        <div id="question3" class="question">This is a Single Word Question?</div>
+        <!--Answer-->
+        <div class="ftp-answers-flex">
 
-        <!--Question Area-->
-        <div class="question-area">
-            <div class="padder2">
-            </div>
         </div>
+    </div>
+    <!--Question 4-->
+    <div></div>
+    <!--Question 5-->
+    <div></div>
+    <!--Question 6-->
+    <div></div>
+    <!--Question 7-->
+    <div></div>
+    <!--Question 8-->
+    <div></div>
+    <!--Question 9-->
+    <div></div>
+    <!--Question 10-->
+    <div></div>
+    <!--Question 11-->
+    <div></div>
     </div>
 </body>
 
