@@ -1,8 +1,7 @@
 
 .bgstyle{
-    background-image: url("palm-leaf/palm-leaf.png");
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Baloo', cursive;
+    background-color: #3D5B59;
+    font-family: 'Shadows Into Light', cursive;
     color: #FAB333;
 }
 
@@ -15,15 +14,22 @@
     font-size:30px;
     text-align: center;
     color: #B99095;
+    margin-bottom: 15px;
 }
 
 .win-text, .loss-text, .missed-text {
     text-align: center;
-    color: #3D5B59;
+    color: #B99095;
     font-size:28px;
     margin: 10px;
 }
 
+.timer {
+    text-align: center;
+    color: #B99095;
+    font-size:28px;
+    margin: 10px;
+}
 .scoreboard-flex{
     display:flex;
     justify-content:center;
@@ -36,6 +42,26 @@
     padding:40px 0px;
 }
 
+.dot {
+    height: 550px;
+    width: 550px;
+    background-color: #B99095;
+    background-image: url("palm-leaf/palm-leaf");  
+    border-radius: 50%;
+    border: solid 3px #FAB333;
+    display:flex;
+    justify-content:center;
+    margin: auto;
+    padding: 10px;
+    z-index: 0; 
+  }
+
+  .question {
+      font-size: 30px;
+      text-align: center;
+      z-index: 1;
+      float: unset;
+  }
 /* .button-style{
     color:#FFF;
     border-radius:0px;

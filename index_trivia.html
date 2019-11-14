@@ -6,100 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Timed Trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style_trivia.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="trivia.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style_trivia.css">
+    
 </head>
 
-<body class="bgstyle">
-    <!--Title and Directions-->
-    <div>
-        <div class="title">Timed Trivia</div>
-        <div class="directions">answer each question before time runs out!</div>
-    </div>
-
-    <!--Score-->
-    <div class="scoreboard-flex">
-        <div class="win-text">
-            <div>CORRECT</div>
-            <div id="correct">0</div>
-        </div>
-        <div class="loss-text">
-            <div>INCORRECT</div>
-            <div id="incorrect">0</div>
-        </div>
-        <div class="missed-text">
-            <div>MISSED</div>
-            <div id="correct">0</div>
-        </div>
-    </div>
-    <!--Score Board-->
+<body>
     <div>
         <!--Timer-->
-        <div class="timer">
+        <div>
             <div>
-                <div>TIME:</div>
+                <div>Time:</div>
                 <div id="timer"></div>
             </div>
         </div>
+        <!--Score-->
+        <div>
+            <!--Correct-->
+            <div>
+                <div>Correct:</div>
+                <div id="correct">0</div>
+            </div>
+            <!--Incorrect-->
+            <div>
+                <div>Incorrect:</div>
+                <div id="incorrect">0</div>
+            </div>
+            <!--Missed-->
+            <div>
+                <div>Missed:</div>
+                <div id="missed">0</div>
+            </div>
+        </div>
     </div>
-
     <!--Questions-->
-    <div class="padder">
-        <!--Question 1-->
-        <div class="question" id="question1">
-            <!--Title-->
-            <div class="question-title">Question 1:</div>
-            <!--Question-->
-            <div id="question1" class="question">This is a multiple choice question?</div>
-            <!--Answers-->
-            <div class="answers-flex">
-                <div>
-                    <div id="answer1" class="answer-btn" onclick="answerCheckBtn1()">Answer 1</div>
-                </div>
-                <div>
-                    <div id="answer2" class="answer-btn" onclick="answerCheckBtn2()">Answer 2</div>
-                </div>
-            </div>
-            <div class="answers-flex">
-                <div>
-                    <div id="answer3" class="answer-btn" onclick="answerCheckBtn3()">Answer 3</div>
-                </div>
-                <div>
-                    <div id="answer4" class="answer-btn" onclick="answerCheckBtn4()">Answer 4</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--Question 3-->
     <div>
-        <!--Title-->
-        <div class="question-title">Question 3:</div>
-        <!--Question-->
-        <div id="question3" class="question">This is a Single Word Question?</div>
-        <!--Answer-->
-        <div class="ftp-answers-flex">
-
+        <div>
+            <div>Question <span id="questionNumber"></span></div>
+            <div id="question">this is a question?</div>
+            <div>
+                <div>
+                    <div id="choice1">Answer 1</div>
+                </div>
+                <div>
+                    <div id="choice2">Answer 2</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div id="choice3">Answer 3</div>
+                </div>
+                <div>
+                    <div id="choice4">Answer 4</div>
+                </div>
+            </div>
         </div>
     </div>
-    <!--Question 4-->
-    <div></div>
-    <!--Question 5-->
-    <div></div>
-    <!--Question 6-->
-    <div></div>
-    <!--Question 7-->
-    <div></div>
-    <!--Question 8-->
-    <div></div>
-    <!--Question 9-->
-    <div></div>
-    <!--Question 10-->
-    <div></div>
-    <!--Question 11-->
-    <div></div>
+    <!--Next Question-->
+    <div>
+        <div>
+            <div id="nextQuestion" onclick="nextButton()">Next Question</div>
+        </div>
     </div>
 </body>
 
