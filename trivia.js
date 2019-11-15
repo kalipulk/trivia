@@ -4,7 +4,7 @@ let incorrect = 0;
 let missed = 0;
 
 //Timer
-let count = 10;
+let count = 60;
 let counter = setInterval(timer, 1000);
 
 //Tracked Question
@@ -68,6 +68,24 @@ function timer() {
     document.getElementById("timer").innerHTML = count;
 }
 
+function resetTimer() {
+    clearInterval(counter);
+    setTimeout(function () {
+        count = count + (61 - count);
+        counter = setInterval(timer, 1000);
+    }, 7000);
+}
+
+function correctOutput () {
+    correct += 1;
+    $("correct").text(correct);
+}
+
+function incorrectOutput () {
+    incorrect += 1;
+    $("incorrect").text(incorrect);
+}
+
 const nextButton = () => {
     trackedQuestion += 1;
     if (trackedQuestion == 1) {
@@ -98,7 +116,7 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q5Choice[1];
         document.getElementById("choice3").innerHTML = q5Choice[2];
         document.getElementById("choice4").innerHTML = q5Choice[3];
-    } else  if (trackedQuestion == 5) {
+    } else if (trackedQuestion == 5) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[5];
         document.getElementById("question").innerHTML = questions[5];
         document.getElementById("choice1").innerHTML = q6Choice[0];
@@ -146,3 +164,46 @@ const nextButton = () => {
         return;
     }
 }
+
+const answerCheckButton = () => {
+    if (document.getElementById("choice1").onclick) {
+        if (trackedQuestion === questions[0]) {
+            if (q1Choice[1] === answer[0]) {
+                correctOutput();
+            } else {
+                incorrectOutput();
+            }
+        }
+    }
+    if (document.getElementById("choice2").onclick) {
+        if (trackedQuestion === questions[0]) {
+            if (q1Choice[1] === answer[0]) {
+                correctOutput();
+            } else {
+                incorrectOutput();
+            }
+        }
+    }
+    if (document.getElementById("choice3").onclick) {
+        if (trackedQuestion === questions[0]) {
+            if (q1Choice[1] === answer[0]) {
+                correctOutput();
+            } else {
+                incorrectOutput();
+            }
+        }
+    }
+    if (document.getElementById("choice4").onclick) {
+        if (trackedQuestion === questions[0]) {
+            if (q1Choice[1] === answer[0]) {
+                correctOutput();
+            } else {
+                incorrectOutput();
+            }
+        }
+    }
+
+    resetTimer();
+    timer();
+    //call next question? 
+};
