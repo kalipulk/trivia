@@ -190,6 +190,12 @@ function nextButton() {
         indexItem = 0;
         nextQuestion = 0;
         trackedQuestion = 0;
+        correct = 0;
+        incorrect = 0;
+        missed = 0;
+        $("#correct").text(correct);
+        $("#incorrect").text(incorrect);
+        $("#missed").text(missed);
         document.getElementById("questionNumber").innerHTML = questionNumbers[0];
         document.getElementById("question").innerHTML = questions[0];
         document.getElementById("choice1").innerHTML = q1Choice[0];
@@ -197,7 +203,7 @@ function nextButton() {
         document.getElementById("choice3").innerHTML = q1Choice[2];
         document.getElementById("choice4").innerHTML = q1Choice[3];
         resetTimer();
-        $("#nextQuestion").text("Restart");
+
     }
 }
 
@@ -271,7 +277,7 @@ function answerCheckButton1 (){
             incorrectAnswer();
         }
     } else {
-        alert("you fucked up")
+        alert("error")
     }
 };
 
@@ -343,7 +349,7 @@ const answerCheckButton2 = () => {
                 incorrectAnswer();
             }
     } else {
-        alert("you fucked up")
+        alert("error")
     }
 };
 const answerCheckButton3 = () => {
@@ -414,7 +420,7 @@ const answerCheckButton3 = () => {
                 incorrectAnswer();
             }
     } else {
-        alert("you fucked up")
+        alert("error");
     }
 };
 
@@ -486,7 +492,7 @@ const answerCheckButton4 = () => {
                 incorrectAnswer();
             }
     } else {
-        alert("you fucked up")
+        alert("error")
     }
 };
 
