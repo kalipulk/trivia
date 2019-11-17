@@ -1,7 +1,7 @@
 
-let correct = 0;
-let incorrect = 0;
-let missed = 0;
+var correct = 0;
+var incorrect = 0;
+var missed = 0;
 
 //Timer
 let count = 60;
@@ -9,6 +9,10 @@ let counter = setInterval(timer, 1000);
 
 //Tracked Question
 let trackedQuestion = 0;
+
+var indexItem = 0;
+var choiceItem = 0;
+var answerItem = 0;
 
 //Questions
 let questionNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -26,6 +30,11 @@ let questions = [
     "how many times can a hummingbird flat its wings per second?",
 ];
 
+
+//var index = questions.indexOf(questions[1]);
+//var questionIndexAdd = questions[indexItem];
+
+
 let q1Choice = ["cat", "koala", "gorilla", "parrot"];
 let q2Choice = ["tower", "pride", "herd", "flock"];
 let q3Choice = ["elephant", "great dane", "blue whale", "rhinoceros"];
@@ -35,15 +44,16 @@ let q6Choice = ["squid", "lobster", "frog", "shark"];
 let q7Choice = ["jenny", "maggie", "kelly", "susan"];
 let q8Choice = ["3", "7", "1", "4"];
 let q9Choice = ["brussel sprout", "banana", "lima bean", "pineapple"];
-let q10Choice = ["elephant", "blue whale", "gianto tortoise", "locust"];
+let q10Choice = ["elephant", "blue whale", "giant tortoise", "locust"];
 let q11Choice = ["20", "40", "80", "160"];
 
-let answer = ["koala", "tower", "blue whale", "sloth", "ostrich", "lobster", "jenny", "3", "lima bean", "gianto tortoise", "80"];
+let answer = ["koala", "tower", "blue whale", "sloth", "ostrich", "lobster", "jenny", "3", "lima bean", "giant tortoise", "80"];
 
 
 $(document).ready(function () {
 
-
+    //console.log(questionIndexAdd);
+    console.log(questions[indexItem]);
     //multiple choice questions
     document.getElementById("questionNumber").innerHTML = questionNumbers[0];
     document.getElementById("question").innerHTML = questions[0];
@@ -55,13 +65,18 @@ $(document).ready(function () {
     timer();
 });
 
+function indexAdd() {
+    indexItem += 1;
+    answerItem += 1;
+}
+
 function timer() {
     count = count - 1;
     if (count <= 0) {
         clearInterval(counter);
         missed += 1;
         $("#missed").text(missed);
-        trackedQuestion += 1;
+        //trackedQuestion += 1;
         console.log(trackedQuestion);
         nextButton();
     }
@@ -73,20 +88,11 @@ function resetTimer() {
     setTimeout(function () {
         count = count + (61 - count);
         counter = setInterval(timer, 1000);
-    }, 7000);
+    }, 1000);
 }
 
-function correctOutput () {
-    correct += 1;
-    $("correct").text(correct);
-}
 
-function incorrectOutput () {
-    incorrect += 1;
-    $("incorrect").text(incorrect);
-}
-
-const nextButton = () => {
+function nextButton() {
     trackedQuestion += 1;
     if (trackedQuestion == 1) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[1];
@@ -95,6 +101,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q2Choice[1];
         document.getElementById("choice3").innerHTML = q2Choice[2];
         document.getElementById("choice4").innerHTML = q2Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 2) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[2];
         document.getElementById("question").innerHTML = questions[2];
@@ -102,6 +110,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q3Choice[1];
         document.getElementById("choice3").innerHTML = q3Choice[2];
         document.getElementById("choice4").innerHTML = q3Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 3) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[3];
         document.getElementById("question").innerHTML = questions[3];
@@ -109,6 +119,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q4Choice[1];
         document.getElementById("choice3").innerHTML = q4Choice[2];
         document.getElementById("choice4").innerHTML = q4Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 4) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[4];
         document.getElementById("question").innerHTML = questions[4];
@@ -116,6 +128,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q5Choice[1];
         document.getElementById("choice3").innerHTML = q5Choice[2];
         document.getElementById("choice4").innerHTML = q5Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 5) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[5];
         document.getElementById("question").innerHTML = questions[5];
@@ -123,6 +137,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q6Choice[1];
         document.getElementById("choice3").innerHTML = q6Choice[2];
         document.getElementById("choice4").innerHTML = q6Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 6) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[6];
         document.getElementById("question").innerHTML = questions[6];
@@ -130,6 +146,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q7Choice[1];
         document.getElementById("choice3").innerHTML = q7Choice[2];
         document.getElementById("choice4").innerHTML = q7Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 7) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[7];
         document.getElementById("question").innerHTML = questions[7];
@@ -137,6 +155,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q8Choice[1];
         document.getElementById("choice3").innerHTML = q8Choice[2];
         document.getElementById("choice4").innerHTML = q8Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 8) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[8];
         document.getElementById("question").innerHTML = questions[8];
@@ -144,6 +164,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q9Choice[1];
         document.getElementById("choice3").innerHTML = q9Choice[2];
         document.getElementById("choice4").innerHTML = q9Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 9) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[9];
         document.getElementById("question").innerHTML = questions[9];
@@ -151,6 +173,8 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q10Choice[1];
         document.getElementById("choice3").innerHTML = q10Choice[2];
         document.getElementById("choice4").innerHTML = q10Choice[3];
+        indexAdd();
+        resetTimer();
     } else if (trackedQuestion == 10) {
         document.getElementById("questionNumber").innerHTML = questionNumbers[10];
         document.getElementById("question").innerHTML = questions[10];
@@ -158,52 +182,328 @@ const nextButton = () => {
         document.getElementById("choice2").innerHTML = q11Choice[1];
         document.getElementById("choice3").innerHTML = q11Choice[2];
         document.getElementById("choice4").innerHTML = q11Choice[3];
+        indexAdd();
+        resetTimer();
     } else {
-        $("#nextQuestion").text("Restart");
         nextQuestion = 0;
-        return;
+        document.getElementById("questionNumber").innerHTML = questionNumbers[0];
+        document.getElementById("question").innerHTML = questions[0];
+        document.getElementById("choice1").innerHTML = q1Choice[0];
+        document.getElementById("choice2").innerHTML = q1Choice[1];
+        document.getElementById("choice3").innerHTML = q1Choice[2];
+        document.getElementById("choice4").innerHTML = q1Choice[3];
+        indexAdd();
+        resetTimer();
+        $("#nextQuestion").text("Restart");
     }
 }
 
-const answerCheckButton = () => {
-    if (document.getElementById("choice1").onclick) {
-        if (trackedQuestion === questions[0]) {
-            if (q1Choice[1] === answer[0]) {
-                correctOutput();
-            } else {
-                incorrectOutput();
-            }
-        }
-    }
-    if (document.getElementById("choice2").onclick) {
-        if (trackedQuestion === questions[0]) {
-            if (q1Choice[1] === answer[0]) {
-                correctOutput();
-            } else {
-                incorrectOutput();
-            }
-        }
-    }
-    if (document.getElementById("choice3").onclick) {
-        if (trackedQuestion === questions[0]) {
-            if (q1Choice[1] === answer[0]) {
-                correctOutput();
-            } else {
-                incorrectOutput();
-            }
-        }
-    }
-    if (document.getElementById("choice4").onclick) {
-        if (trackedQuestion === questions[0]) {
-            if (q1Choice[1] === answer[0]) {
-                correctOutput();
-            } else {
-                incorrectOutput();
-            }
-        }
-    }
 
-    resetTimer();
-    timer();
-    //call next question? 
+
+function answerCheckButton1 (){
+    if (questions[indexItem] === questions[0]) {
+        if (q1Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[1]) {
+        if (q2Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[2]) {
+        if (q3Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[3]) {
+        if (q4Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[4]) {
+        if (q5Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[5]) {
+        if (q6Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[6]) {
+        if (q7Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[7]) {
+        if (q8Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[8]) {
+        if (q9Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[9]) {
+        if (q10Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else if (questions[indexItem] === questions[10]) {
+        if (q11Choice[0] === answer[answerItem]) {
+            correctAnswer();
+        } else {
+            incorrectAnswer();
+        }
+    } else {
+        alert("you fucked up")
+    }
 };
+
+const answerCheckButton2 = () => {
+    if (questions[indexItem] === questions[0]) {
+            if (q1Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[1]) {
+            if (q2Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[2]) {
+            if (q3Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[3]) {
+            if (q4Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[4]) {
+            if (q5Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[5]) {
+            if (q6Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[6]) {
+            if (q7Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[7]) {
+            if (q8Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[8]) {
+            if (q9Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[9]) {
+            if (q10Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[10]) {
+            if (q11Choice[1] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else {
+        alert("you fucked up")
+    }
+};
+const answerCheckButton3 = () => {
+    if (questions[indexItem] === questions[0]) {
+            if (q1Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[1]) {
+            if (q2Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[2]) {
+            if (q3Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[3]) {
+            if (q4Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[4]) {
+            if (q5Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[5]) {
+            if (q6Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[6]) {
+            if (q7Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[7]) {
+            if (q8Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[8]) {
+            if (q9Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[9]) {
+            if (q10Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[10]) {
+            if (q11Choice[2] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else {
+        alert("you fucked up")
+    }
+};
+
+const answerCheckButton4 = () => {
+    if (questions[indexItem] === questions[0]) {
+            if (q1Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[1]) {
+            if (q2Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[2]) {
+            if (q3Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[3]) {
+            if (q4Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[4]) {
+            if (q5Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[5]) {
+            if (q6Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[6]) {
+            if (q7Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[7]) {
+            if (q8Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[8]) {
+            if (q9Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[9]) {
+            if (q10Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else if (questions[indexItem] === questions[10]) {
+            if (q11Choice[3] === answer[answerItem]) {
+                correctAnswer();
+            } else {
+                incorrectAnswer();
+            }
+    } else {
+        alert("you fucked up")
+    }
+};
+
+function correctOutput() {
+    correct += 1;
+    $("#correct").text(correct);
+}
+
+function incorrectOutput() {
+    incorrect += 1;
+    $("#incorrect").text(incorrect);
+}
+
+// main answer callback function
+function correctAnswer() {
+    correctOutput();
+    nextButton();
+}
+
+function incorrectAnswer() {
+    incorrectOutput();
+    nextButton();
+}
