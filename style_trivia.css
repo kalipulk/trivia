@@ -1,33 +1,31 @@
 
-.bgstyle{
+body{
     background-color: #3D5B59;
     font-family: 'Shadows Into Light', cursive;
-    color: #FAB333;
+}
+.sticky {
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    z-index: 1;
+    top: 0;
 }
 
-.title {
-    font-size:50px;
-    text-align: center;
+.content {
+    margin-top: 250px;
+    
 }
-
-.directions {
-    font-size:30px;
-    text-align: center;
-    color: #B99095;
-    margin-bottom: 15px;
-}
-
 .win-text, .loss-text, .missed-text {
     text-align: center;
     color: #B99095;
-    font-size:28px;
+    font-size:20px;
     margin: 10px;
 }
 
-.timer {
+.time {
     text-align: center;
-    color: #B99095;
-    font-size:28px;
+    color: #FAB333;
+    font-size:30px;
     margin: 10px;
 }
 .scoreboard-flex{
@@ -39,54 +37,60 @@
     width:100%;
     text-align:center;
     font-size:28px;
-    padding:40px 0px;
 }
 
 .dot {
-    height: 550px;
-    width: 550px;
-    background-color: #B99095;
-    background-image: url("palm-leaf/palm-leaf");  
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
-    border: solid 3px #FAB333;
-    display:flex;
-    justify-content:center;
-    margin: auto;
-    padding: 10px;
-    z-index: 0; 
+    font-size: 28px;
+    color: #fff;
+    margin: auto;   
+    vertical-align: middle;
+    word-wrap: normal;
+    text-align: center;
+    background: #000;
   }
 
   .question {
       font-size: 30px;
       text-align: center;
-      z-index: 1;
       float: unset;
+      color: #E8E5D8;
   }
-/* .button-style{
+
+  .answer-flex {
+      display: flex;
+      justify-content: center;
+  }
+
+  .answer-flex > div {
+    width:100%;
+    max-width:200px;
+    padding-top: 20px;
+
+  }
+
+ .answerButton{
     color:#FFF;
     border-radius:0px;
-    background:#F44336;
+    background:#FAB333;
     border:none;
     padding:8px 15px;
-    width:100%;
     text-align:center;
-    max-width:200px;
-    font-weight:bolder;
     font-size:22px;
-    outline:none;
-    
+    outline:none;  
+
 }
-.button-style:hover{
+
+.answerButton:hover{
     color:#fff;
     border-radius:0px;
-    background:#D32F2F;
+    background: #E0C1AE;
     border:none;
     padding:8px 15px;
-    width:100%;
     text-align:center;
-    max-width:200px;
-    font-weight:bolder;
-    font-size:22px;
+    font-size: 22px;
     cursor:hand;
 }
 
@@ -96,7 +100,7 @@
     text-align:center;
     vertical-align:center;
 }
- */
+
 
 .padder{
     padding:50px 0px;

@@ -88,7 +88,7 @@ function resetTimer() {
     setTimeout(function () {
         count = count + (61 - count);
         counter = setInterval(timer, 1000);
-    }, 1000);
+    }, 0);
 }
 
 
@@ -185,14 +185,17 @@ function nextButton() {
         indexAdd();
         resetTimer();
     } else {
+        //clearInterval(counter);
+        answerItem = 0;
+        indexItem = 0;
         nextQuestion = 0;
+        trackedQuestion = 0;
         document.getElementById("questionNumber").innerHTML = questionNumbers[0];
         document.getElementById("question").innerHTML = questions[0];
         document.getElementById("choice1").innerHTML = q1Choice[0];
         document.getElementById("choice2").innerHTML = q1Choice[1];
         document.getElementById("choice3").innerHTML = q1Choice[2];
         document.getElementById("choice4").innerHTML = q1Choice[3];
-        indexAdd();
         resetTimer();
         $("#nextQuestion").text("Restart");
     }
